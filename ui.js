@@ -19,7 +19,7 @@ class UI {
     const i = weather.weather[0].icon;
     this.icon.setAttribute(
       "src",
-      `http://openweathermap.org/img/wn/${i}@2x.png`
+      `https://openweathermap.org/img/wn/${i}@2x.png`
     );
     this.humidity.textContent = `Relative Humidity: ${weather.main.humidity}%`;
     const f = parseFloat(weather.main.feels_like) - 273.15;
