@@ -14,16 +14,16 @@ class UI {
   paint(weather) {
     this.location.textContent = weather.name;
     this.desc.textContent = weather.weather[0].main;
-    const t = parseFloat(weather.main.temp) - 273.15;
-    this.string.textContent = t.toFixed(0) + "°C";
+    // const t = parseFloat(weather.main.temp) - 273.15;
+    this.string.textContent = weather.main.temp.toFixed(0) + "°C";
     const i = weather.weather[0].icon;
     this.icon.setAttribute(
       "src",
       `https://openweathermap.org/img/wn/${i}@2x.png`
     );
     this.humidity.textContent = `Relative Humidity: ${weather.main.humidity}%`;
-    const f = parseFloat(weather.main.feels_like) - 273.15;
-    const fl = f.toFixed(0);
+    // const f = parseFloat(weather.main.feels_like) - 273.15;
+    const fl = weather.main.feels_like.toFixed(0);
     this.feelsLike.textContent = `Feels Like: ${fl}°C`;
     this.pressure.textContent = `Pressure: ${weather.main.pressure} hPa`;
     const w = (weather.wind.speed * 3.6).toFixed(1);
